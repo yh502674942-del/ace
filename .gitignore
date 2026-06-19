@@ -1,0 +1,5 @@
+.DS_Store
+debug-*.png
+preview*.png
+outputs/
+work/

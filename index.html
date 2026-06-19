@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>黄昏以前，我们仍在教室里</title>
+    <link rel="stylesheet" href="src/styles.css?v=59" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="高中时代视觉小说">
+      <section class="title-screen" id="title-screen" aria-label="标题画面">
+        <img class="title-bg" id="title-bg" alt="" />
+        <div class="title-vignette"></div>
+        <div class="title-content">
+          <span>恋爱养成视觉小说</span>
+          <h1>黄昏以前，我们仍在教室里</h1>
+          <p>如果青春真的留下些什么，也许不是答案，而是那些终于学会不再用力抓住的瞬间。</p>
+          <div class="title-actions">
+            <button id="title-start-btn" type="button">Start</button>
+            <button id="title-continue-btn" type="button">Continue</button>
+            <button id="title-archive-btn" type="button">Archive</button>
+          </div>
+          <small id="title-status">点击 Start 开始</small>
+        </div>
+      </section>
+
+      <section class="stage" id="stage">
+        <img class="scene-bg" id="scene-bg" alt="" />
+        <div class="vignette"></div>
+        <img class="character-art" id="character-art" alt="" />
+        <aside class="route-card" aria-live="polite">
+          <span id="route-label">共通线</span>
+          <strong id="chapter-title">序章</strong>
+          <small id="progress-label">0 / 0</small>
+        </aside>
+        <aside class="status-panel" aria-label="养成状态">
+          <div class="status-main">
+            <strong id="calendar-label">第 1 天</strong>
+            <span id="ap-label">行动点 3 / 3</span>
+            <span id="money-label">¥1600</span>
+            <span id="memory-label">回忆 0</span>
+          </div>
+          <div class="stat-grid" id="stat-grid"></div>
+          <div class="heart-grid" id="heart-grid"></div>
+          <div class="inventory-grid" id="inventory-grid"></div>
+        </aside>
+      </section>
+
+      <section class="novel-panel" aria-live="polite">
+        <header class="speaker-row">
+          <div>
+            <span class="speaker" id="speaker">旁白</span>
+            <span class="mood" id="mood">雨后的图书馆</span>
+          </div>
+          <div class="toolbar" aria-label="工具栏">
+            <button id="auto-btn" type="button" title="自动播放">Auto</button>
+            <button id="save-btn" type="button" title="保存进度">Save</button>
+            <button id="load-btn" type="button" title="读取进度">Load</button>
+            <button id="archive-btn" type="button" title="回忆册与角色档案">Archive</button>
+            <button id="restart-btn" type="button" title="重新开始">Restart</button>
+          </div>
+        </header>
+
+        <div class="dialogue-body">
+          <figure class="portrait-frame" id="portrait-frame">
+            <img id="portrait-art" alt="" />
+            <figcaption id="expression-label"></figcaption>
+          </figure>
+          <p class="line-text" id="line-text"></p>
+        </div>
+        <div class="choices" id="choices"></div>
+        <footer class="hint-row">
+          <span id="advance-hint">点击文字区域继续</span>
+          <span id="save-status">尚未保存</span>
+        </footer>
+      </section>
+
+      <dialog class="archive-dialog" id="archive-dialog" aria-label="回忆册与角色档案">
+        <header class="archive-header">
+          <div>
+            <span>回忆册</span>
+            <strong>黄昏以前，仍然留下来的东西</strong>
+          </div>
+          <button id="archive-close-btn" type="button">Close</button>
+        </header>
+        <div class="archive-content">
+          <nav class="archive-filters" id="archive-filters" aria-label="回忆册角色筛选"></nav>
+          <section>
+            <h2>通关后收集提示</h2>
+            <div class="archive-grid collection-grid" id="collection-list"></div>
+          </section>
+          <section>
+            <h2>回看札记</h2>
+            <div class="archive-grid review-grid" id="review-list"></div>
+          </section>
+          <section>
+            <h2>角色档案</h2>
+            <div class="archive-grid" id="profile-list"></div>
+          </section>
+          <section>
+            <h2>甜美回忆</h2>
+            <div class="archive-grid" id="memory-list"></div>
+          </section>
+          <section>
+            <h2>事件回想</h2>
+            <div class="archive-grid" id="scene-list"></div>
+          </section>
+          <section>
+            <h2>通关附录</h2>
+            <div class="archive-grid" id="epilogue-list"></div>
+          </section>
+          <section>
+            <h2>结局收集</h2>
+            <div class="archive-grid" id="ending-list"></div>
+          </section>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="src/story.js?v=59"></script>
+    <script src="src/app.js?v=59"></script>
+  </body>
+</html>
