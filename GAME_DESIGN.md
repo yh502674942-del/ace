@@ -89,6 +89,7 @@
 - v61 起，冬子线基础正确礼物“罐装咖啡”接入“正确礼物后的咖啡释然”表情差分，并新增一条正确礼物回看札记。该改动补齐三位女主基础正确礼物的可见读法，不改变礼物成本、效果、AP、库存、结局优先级或阈值。
 - v62 起，遥线进阶礼物“留白便签”新增一条进阶礼物回看札记，复用已有礼物小任务 CG。该改动只让进阶礼物任务的主题可回看，不改变购买门槛、礼物效果、AP、库存、结局优先级或阈值。
 - v63 起，葵线进阶礼物“窗边创可贴盒”和冬子线进阶礼物“透明文件袋”各新增一条进阶礼物回看札记，复用已有礼物小任务 CG。该改动补齐三位女主进阶礼物任务后的主题读法，不改变购买门槛、礼物效果、AP、库存、结局优先级或阈值。
+- v64 起，葵线进阶礼物“窗边创可贴盒”接入“创可贴盒旁被允许慢慢好的释然”表情差分，并扩写任务正文中按住盒盖、肩膀放松的动作落点。该改动只替换礼物小任务的可见表情，不改变购买门槛、礼物效果、AP、库存、结局优先级或阈值。
 
 ## 结局规则
 
@@ -148,6 +149,7 @@
 - v61 冬子正确礼物细读法只新增 `portrait-fuyuko-correctgift-coffee-relief.png`、一个 `backgrounds` / `portraits` / `portraitStates` 条目、一个 `gameplay.scenes.gift_fuyuko` 条目和一条 `gameplay.reviewNotes`；`gift_fuyuko` 原有礼物效果、AP 消耗、库存扣除和结局阈值不变。
 - v62 遥进阶礼物细读法只新增一条 `gameplay.reviewNotes.harukaAdvancedGiftMargin`，复用 `taskHarukaInkMargin` 与 `task_haruka_margin_note`；`marginSticky` 原有购买门槛、礼物效果、AP 消耗、库存扣除、任务 flag 和结局阈值不变。
 - v63 葵/冬子进阶礼物细读法只新增 `gameplay.reviewNotes.aoiAdvancedGiftBandage` 与 `gameplay.reviewNotes.fuyukoAdvancedGiftFileBag`，分别复用 `taskAoiCraneMilktea` / `taskFuyukoDutyCoffee` 与对应任务节点；`windowBandage`、`clearFileBag` 原有购买门槛、礼物效果、AP 消耗、库存扣除、任务 flag 和结局阈值不变。
+- v64 葵进阶礼物表情差分只新增 `portrait-aoi-advancedgift-bandage-relief.png`、一个 `portraits` / `portraitStates` 条目，并将 `task_aoi_window_bandage` 的 `portrait` 指向该差分；`windowBandage` 原有购买门槛、礼物效果、AP 消耗、库存扣除、任务 flag 和结局阈值不变。
 - 关键节奏：第 1-3 天可完成主要礼物/路线事件积累；第 6、7、13 天可依次完成三组周末约会；第 14 天以后保留大量 AP 给学习、打工和降负罪，不会被最终阈值卡死。
 - 雾岛遥线需要为进阶礼物额外打工一次；白石葵线和椎名冬子线初始金钱即可覆盖三件路线礼物。所有路线在规范游玩下负罪可控制在 7 以下。
 - 送礼和约会不计入核心事件数，因此玩家若想拿好结局，必须至少主动进入对应女主路线 5 次；这是有意设计，用来避免只靠金钱和礼物跳过“看见对方”的过程。
