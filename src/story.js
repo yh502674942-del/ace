@@ -50,7 +50,8 @@ window.GALGAME_STORY = {
       normalAftertasteAoiInfirmary: "assets/normal-aftertaste-aoi-infirmary.png",
       normalAftertasteFuyukoBackdoor: "assets/normal-aftertaste-fuyuko-backdoor.png",
       giftHarukaMarginRelief: "assets/portrait-haruka-correctgift-margin-relief.png",
-      giftAoiCraneRelief: "assets/portrait-aoi-correctgift-crane-relief.png"
+      giftAoiCraneRelief: "assets/portrait-aoi-correctgift-crane-relief.png",
+      giftFuyukoCoffeeRelief: "assets/portrait-fuyuko-correctgift-coffee-relief.png"
     },
     characters: {},
     portraits: {
@@ -85,6 +86,7 @@ window.GALGAME_STORY = {
       fuyukoApology: "assets/portrait-fuyuko-casual-apology.png",
       fuyukoApologyRelaxed: "assets/portrait-fuyuko-apology-relaxed.png",
       fuyukoWrongGiftRelaxed: "assets/portrait-fuyuko-wronggift-relaxed.png",
+      fuyukoCorrectGiftCoffeeRelief: "assets/portrait-fuyuko-correctgift-coffee-relief.png",
       harukaRelieved: "assets/portrait-haruka-uniform-relieved.png",
       harukaApologyRelaxed: "assets/portrait-haruka-apology-relaxed.png",
       aoiSurprised: "assets/portrait-aoi-cardigan-surprised.png",
@@ -133,6 +135,7 @@ window.GALGAME_STORY = {
     fuyukoApology: { character: "椎名冬子", outfit: "车站便服", expression: "认真道歉" },
     fuyukoApologyRelaxed: { character: "椎名冬子", outfit: "学生会制服", expression: "认真道歉后的放松" },
     fuyukoWrongGiftRelaxed: { character: "椎名冬子", outfit: "学生会制服", expression: "错误礼物修复后的克制释然" },
+    fuyukoCorrectGiftCoffeeRelief: { character: "椎名冬子", outfit: "学生会制服", expression: "正确礼物后的咖啡释然" },
     harukaRelieved: { character: "雾岛遥", outfit: "冬季校服", expression: "道歉后的放松" },
     harukaApologyRelaxed: { character: "雾岛遥", outfit: "冬季校服", expression: "认真道歉后的放松" },
     aoiSurprised: { character: "白石葵", outfit: "薄针织开衫", expression: "被信任后的惊喜" },
@@ -558,6 +561,7 @@ window.GALGAME_STORY = {
       aoi_007: { route: "白石葵线", title: "河边的信", hero: "aoi" },
       aoi_008: { route: "白石葵线", title: "转学前夜", hero: "aoi" },
       fuyuko_001: { route: "椎名冬子线", title: "黄昏教室", hero: "fuyuko" },
+      gift_fuyuko: { route: "送礼", title: "温热罐装咖啡", hero: "fuyuko", image: "giftFuyukoCoffeeRelief" },
       fuyuko_004: { route: "椎名冬子线", title: "夜班便利店", hero: "fuyuko", image: "eventFuyukoNightRegister" },
       fuyuko_005: { route: "椎名冬子线", title: "值日表背面", hero: "fuyuko", image: "eventFuyukoDutyRosterBack" },
       fuyuko_006: { route: "椎名冬子线", title: "便利店后门", hero: "fuyuko", image: "eventFuyukoBackdoorCoffee" },
@@ -1334,6 +1338,54 @@ window.GALGAME_STORY = {
         ],
         hintText: "把纸鹤信笺送给葵后，这里会留下正确礼物的读法。对的不是折得漂亮，而是没有逼她立刻把心事展开。",
         completeText: "重读这次送礼时，可以留意葵先把纸鹤放在掌心，又慢慢压平翅尖。她喜欢的不是我终于折对了形状，而是那份笨拙没有催她马上解释、马上感谢、马上好起来。正确礼物真正对的地方，是它允许脆弱继续折着。"
+      },
+      fuyukoCorrectGiftCoffee: {
+        hero: "fuyuko",
+        category: "正确礼物回看",
+        title: "冬子：咖啡不是救命绳",
+        image: "giftFuyukoCoffeeRelief",
+        replayTarget: "gift_fuyuko",
+        requirements: [
+          { type: "scene", id: "gift_fuyuko" }
+        ],
+        hintText: "把罐装咖啡送给冬子后，这里会留下正确礼物的读法。对的不是替她撑住一切，而是承认她可以只握一会儿温度。",
+        completeText: "重读这次送礼时，可以留意冬子先说会还，再把咖啡罐转到没有水珠的那一面。她喜欢的不是我扮演拯救者，而是我终于没有把收下等同于欠下。正确礼物真正对的地方，是它只提供一点温度，不要求她立刻卸下体面。"
+      },
+      harukaAdvancedGiftMargin: {
+        hero: "haruka",
+        category: "进阶礼物回看",
+        title: "遥：这里可以空着",
+        image: "taskHarukaInkMargin",
+        replayTarget: "task_haruka_margin_note",
+        requirements: [
+          { type: "scene", id: "task_haruka_margin_note" }
+        ],
+        hintText: "完成遥的留白便签小任务后，这里会留下进阶礼物的读法。真正进阶的不是礼物更贵，而是终于把答案的位置留空。",
+        completeText: "重读留白便签时，可以留意遥没有立刻收下，而是先确认我有没有把它变成暗示。她最后写下“这里可以空着”，不是在夸我懂她，而是在承认我这次终于没有抢着替沉默命名。进阶礼物真正进阶的地方，是玩家学会让喜欢停在页边。"
+      },
+      aoiAdvancedGiftBandage: {
+        hero: "aoi",
+        category: "进阶礼物回看",
+        title: "葵：柜子里有创可贴",
+        image: "taskAoiCraneMilktea",
+        replayTarget: "task_aoi_window_bandage",
+        requirements: [
+          { type: "scene", id: "task_aoi_window_bandage" }
+        ],
+        hintText: "完成葵的窗边创可贴盒小任务后，这里会留下进阶礼物的读法。真正进阶的不是承诺治好她，而是让她知道用不用都可以。",
+        completeText: "重读窗边创可贴盒时，可以留意葵先说自己没有受伤，又把盒子往窗台里面推了推。她需要的不是我替她证明明天会好起来，而是一个安静的地方，允许她受伤时再决定要不要伸手。进阶礼物真正进阶的地方，是温柔终于不再催促痊愈。"
+      },
+      fuyukoAdvancedGiftFileBag: {
+        hero: "fuyuko",
+        category: "进阶礼物回看",
+        title: "冬子：自己整理的袋子",
+        image: "taskFuyukoDutyCoffee",
+        replayTarget: "task_fuyuko_file_bag",
+        requirements: [
+          { type: "scene", id: "task_fuyuko_file_bag" }
+        ],
+        hintText: "完成冬子的透明文件袋小任务后，这里会留下进阶礼物的读法。真正进阶的不是替她收拾，而是递给她可以自己整理的余地。",
+        completeText: "重读透明文件袋时，可以留意冬子先提醒我不要随便看她的东西，然后才说这个确实有用。她接受的不是被照顾成轻松的人生，而是我终于没有把帮助变成接管。进阶礼物真正进阶的地方，是它把秩序交还给她自己。"
       },
       harukaLowTrustMargin: {
         hero: "haruka",
@@ -2179,8 +2231,9 @@ window.GALGAME_STORY = {
       mood: "便利店门口",
       speaker: "椎名冬子",
       background: "classroomDusk",
+      portrait: "fuyukoCorrectGiftCoffeeRelief",
       text:
-        "冬子接过罐装咖啡，却没有立刻喝。\n\n“我会还你的。”她说。\n\n“嗯。”我点头。\n\n她愣了一下，像是没想到我没有说那些漂亮话。过了很久，她才低声说：“这样就好。”",
+        "冬子接过罐装咖啡，却没有立刻喝。\n\n“我会还你的。”她说。\n\n“嗯。”我点头。\n\n她愣了一下，像是没想到我没有说那些漂亮话。窗边最后一点黄昏落在值日表夹上，她把咖啡罐转到没有水珠的那一面，双手收在腰前，肩膀终于松了很小的一点。\n\n过了很久，她才低声说：“这样就好。”\n\n后来我才明白，冬子喜欢的不是我替她准备了什么，而是我终于没有把一罐咖啡说成救命绳。它只是温的，够她握一会儿，也够我安静地站在旁边。",
       next: "daily_hub"
     },
     gift_fuyuko_clip: {
@@ -3086,11 +3139,11 @@ window.GALGAME_STORY = {
       text:
         [
           "下一轮应继续扩写：",
-          "1. 当前 v60 保留 v42 存档 key，但已把 story/app/styles 缓存号提到 v60：badForeshadowHaruka/Aoi/Fuyuko、wrongGiftHaruka/Aoi/Fuyuko、错过核心事件/低事件数、高好感低信任、错过约会和普通结局余韵状态仍按原优先级进入结局前回收；送错礼物会按目标女主分流到 gift_wrong_haruka/aoi/fuyuko，即时扣 AP、库存、好感、信任、负罪与 wrongGift flag 的逻辑不变；遥线正确送旧文学杂志会解锁 gift_haruka scene，并显示 portrait-haruka-correctgift-margin-relief.png；葵线正确送纸鹤信笺会解锁 gift_aoi scene，并显示 portrait-aoi-correctgift-crane-relief.png；三条普通余韵后会先进入 prelude_normal_afterglow_trio，再进入通用普通结局；Archive 收集记录已拆到独立本地记录，重读入口会恢复进入前快照，打开 Archive、Continue 和 Load 时会按当前/存档进度补一次可反推的解锁；AP 用尽后的日程页只保留推进按钮，hub 底部提示会改为选择行动/结束今天，避免灰色按钮或错误提示造成卡住误解。后续新增礼物、约会或回忆时，继续跑路线模拟，避免破坏 AP、金钱、事件数和负罪平衡。",
-          "2. 第四、第五、第六事件已有专属 CG 和 Archive 缩略图：haruka_004/005/006、aoi_004/005/006、fuyuko_004/005/006 均已接入。v43 新增三张差异化基础立绘 portrait-haruka-base-distinct-v43.png、portrait-aoi-base-distinct-v43.png、portrait-fuyuko-base-distinct-v43.png，并分别接到 harukaQuiet、aoiTender、fuyukoComposed，让默认路线与日常行动不再共用相近视觉印象。v43 为遥线核心事件走完后的图书馆行动新增 5 段轮换日常文本；v51 又为葵线医务室和冬子线教室/便利店后期行动各新增 5 段轮换日常文本；v55 为晚自习和便利店打工各新增 5 段轮换文本，避免后期刷属性和金钱时只重复单段 fallback；v56 自查修复 Archive 同步和 hub 提示；v57 补三条普通结局公共余韵回看札记；v58 补三位女主送错礼物即时反应节点和三条即时回看札记；v59 生成并接入遥正确礼物后的页边安心差分，补 gift_haruka 正确礼物回看札记；v60 生成并接入葵正确礼物后的纸鹤安心差分，补 gift_aoi 正确礼物回看札记。",
+          "1. 当前 v63 保留 v42 存档 key，但已把 story/app/styles 缓存号提到 v63：badForeshadowHaruka/Aoi/Fuyuko、wrongGiftHaruka/Aoi/Fuyuko、错过核心事件/低事件数、高好感低信任、错过约会和普通结局余韵状态仍按原优先级进入结局前回收；送错礼物会按目标女主分流到 gift_wrong_haruka/aoi/fuyuko，即时扣 AP、库存、好感、信任、负罪与 wrongGift flag 的逻辑不变；遥线正确送旧文学杂志会解锁 gift_haruka scene，并显示 portrait-haruka-correctgift-margin-relief.png；葵线正确送纸鹤信笺会解锁 gift_aoi scene，并显示 portrait-aoi-correctgift-crane-relief.png；冬子线正确送罐装咖啡会解锁 gift_fuyuko scene，并显示 portrait-fuyuko-correctgift-coffee-relief.png；三条进阶礼物任务分别会解锁 task_haruka_margin_note、task_aoi_window_bandage、task_fuyuko_file_bag，并各有一条进阶礼物回看札记；三条普通余韵后会先进入 prelude_normal_afterglow_trio，再进入通用普通结局；Archive 收集记录已拆到独立本地记录，重读入口会恢复进入前快照，打开 Archive、Continue 和 Load 时会按当前/存档进度补一次可反推的解锁；AP 用尽后的日程页只保留推进按钮，hub 底部提示会改为选择行动/结束今天，避免灰色按钮或错误提示造成卡住误解。后续新增礼物、约会或回忆时，继续跑路线模拟，避免破坏 AP、金钱、事件数和负罪平衡。",
+          "2. 第四、第五、第六事件已有专属 CG 和 Archive 缩略图：haruka_004/005/006、aoi_004/005/006、fuyuko_004/005/006 均已接入。v43 新增三张差异化基础立绘 portrait-haruka-base-distinct-v43.png、portrait-aoi-base-distinct-v43.png、portrait-fuyuko-base-distinct-v43.png，并分别接到 harukaQuiet、aoiTender、fuyukoComposed，让默认路线与日常行动不再共用相近视觉印象。v43 为遥线核心事件走完后的图书馆行动新增 5 段轮换日常文本；v51 又为葵线医务室和冬子线教室/便利店后期行动各新增 5 段轮换日常文本；v55 为晚自习和便利店打工各新增 5 段轮换文本，避免后期刷属性和金钱时只重复单段 fallback；v56 自查修复 Archive 同步和 hub 提示；v57 补三条普通结局公共余韵回看札记；v58 补三位女主送错礼物即时反应节点和三条即时回看札记；v59 生成并接入遥正确礼物后的页边安心差分，补 gift_haruka 正确礼物回看札记；v60 生成并接入葵正确礼物后的纸鹤安心差分，补 gift_aoi 正确礼物回看札记；v61 生成并接入冬子正确礼物后的咖啡释然差分，补 gift_fuyuko 正确礼物回看札记；v62 新增遥进阶礼物留白便签回看札记；v63 新增葵、冬子进阶礼物回看札记，三条均复用已有女主入镜礼物小任务 CG。",
           "3. v21 已把 v20 的三张无人物错过约会 CG 替换为女主入镜版本：missed-date-haruka-bookstore-hero.png、missed-date-aoi-riverside-hero.png、missed-date-fuyuko-station-hero.png；v21 也新增普通结局角色余韵节点和三位女主同屏普通结局 CG；v50 新增普通结局公共走廊余韵 CG normal-ending-afterglow-trio.png。不要再接入只有背景没有女主的剧情/回收/结局 CG，新增图应让对应女主自然入镜。",
-          "4. v22 新增 Archive 通关后收集提示；v23 新增 Archive 回看札记；v25 继续为三条低信任普通回收新增回看札记；v26 新增三条普通余韵回看札记；v27 新增三条错误礼物普通回收札记；v28 新增三条坏结局预兆回看札记；v29 新增三条好结局后日谈回看札记；v32 在图像生成限流时新增三条普通余韵克制笑札记，并补强三段普通余韵正文；v33 新增三条好结局告别微表情札记，并补强葵/冬子好结局告别前的小笑；v35 新增三条角色档案边界读法，并补强冬子好结局中“接受也是尊重”的动作落点；v57 新增三条普通结局公共余韵回看札记，整理名字不是选项、没有告白的毕业照和回头不是重来；v58 新增三条错误礼物即时回看札记，整理页边被写错的名字、谢谢说得太轻、收下不是欠下；v59 新增一条正确礼物回看札记，整理遥的页边没有被催促；v60 新增一条正确礼物回看札记，整理葵的纸鹤没有被催着展开。它们都只读取已解锁 ending/epilogue/memory/scene，完成后显示既有人物 CG 与重读入口，不改变数值或结局判定。",
-          "5. v24 已成功接入遥“认真道歉后的放松”表情差分；v25-v29 图像生成接口连续 TooManyRequests，v30 第二次内置 imagegen 成功生成遥“告别前普通笑”立绘差分并接入好结局，v31 内置 imagegen 成功生成葵“低信任修复后的安心”并接入修复回收，v32 重试葵告别前普通笑时遇到 TooManyRequests，v33 重试冬子告别前普通笑时仍遇到 TooManyRequests，均未新增图片。v34 内置 imagegen 成功生成葵“告别前普通笑”并接入 ending_aoi_good；v35 重试冬子告别前普通笑未获得新图，未使用 CLI/API fallback；v36 内置 imagegen 成功生成冬子“告别前普通笑”并接入 ending_fuyuko_good；v37 内置 imagegen 成功生成遥“普通结局里的克制笑”并接入 prelude_haruka_normal_aftertaste；v38 内置 imagegen 成功生成葵“普通结局里的克制笑”并接入 prelude_aoi_normal_aftertaste；v39 内置 imagegen 成功生成冬子“普通结局里的克制笑”并接入 prelude_fuyuko_normal_aftertaste；v40 内置 imagegen 成功生成冬子“认真道歉后的放松”并接入 prelude_fuyuko_repair 与 prelude_fuyuko_wrong_gift_repair；v41 内置 imagegen 成功生成葵“错误礼物修复后的放松”并接入 prelude_aoi_wrong_gift_repair；v42 内置 imagegen 成功生成遥“错误礼物修复后的放松”并接入 prelude_haruka_wrong_gift_repair；v47 内置 imagegen 成功生成葵“承诺变轻后的放松”并接入 prelude_aoi_repair；v48 内置 imagegen 成功生成冬子“后门白灯下的克制放松”并接入 fuyuko_006 与 branch_fuyuko_backdoor_sit；v49 修正 AP=0 日程页只显示推进按钮；v50 内置 imagegen 成功生成普通结局公共走廊余韵 CG 并接入 prelude_normal_afterglow_trio 与 Archive 普通结局提示；v51 未新增图片，补齐葵/冬子后期轮换日常，并让 Archive 未完成条件显示类型与还差项；v52 内置 imagegen 成功生成冬子“错误礼物修复后的克制释然”并接入 prelude_fuyuko_wrong_gift_repair；v53 内置 imagegen 成功生成遥“通知单旁被沉默接住后的释然”并接入 branch_haruka_notice_silence；v54 内置 imagegen 成功生成葵“开窗后被允许不命名痛苦的安心”并接入 branch_aoi_thermometer_window；v55 未新增图片，补齐晚自习和便利店打工的轮换日常；v56 未新增图片，自查修复 Continue/Load 的 Archive 修复持久化与 hub 提示；v57 未新增图片，补三条普通结局公共余韵回看札记并修正文档资源统计；v58 未新增图片，补三位女主送错礼物即时分流与 Archive 即时札记；v59 内置 imagegen 成功生成遥“正确礼物后的页边安心”并接入 gift_haruka 与 Archive 正确礼物札记；v60 内置 imagegen 成功生成葵“正确礼物后的纸鹤安心”并接入 gift_aoi 与 Archive 正确礼物札记。下一轮优先继续补冬子的正确礼物细读法或更多轻微释然状态；如果图像接口再次受限，则继续补普通结局角色余韵文本、Archive 细节或其他无需新图的内容。",
+          "4. v22 新增 Archive 通关后收集提示；v23 新增 Archive 回看札记；v25 继续为三条低信任普通回收新增回看札记；v26 新增三条普通余韵回看札记；v27 新增三条错误礼物普通回收札记；v28 新增三条坏结局预兆回看札记；v29 新增三条好结局后日谈回看札记；v32 在图像生成限流时新增三条普通余韵克制笑札记，并补强三段普通余韵正文；v33 新增三条好结局告别微表情札记，并补强葵/冬子好结局告别前的小笑；v35 新增三条角色档案边界读法，并补强冬子好结局中“接受也是尊重”的动作落点；v57 新增三条普通结局公共余韵回看札记，整理名字不是选项、没有告白的毕业照和回头不是重来；v58 新增三条错误礼物即时回看札记，整理页边被写错的名字、谢谢说得太轻、收下不是欠下；v59-v61 新增三条正确礼物回看札记；v62-v63 新增三条进阶礼物回看札记，整理遥的“这里可以空着”、葵的“柜子里有创可贴”和冬子的“自己整理的袋子”。它们都只读取已解锁 ending/epilogue/memory/scene，完成后显示既有人物 CG 与重读入口，不改变数值或结局判定。",
+          "5. v24 已成功接入遥“认真道歉后的放松”表情差分；v25-v29 图像生成接口连续 TooManyRequests，v30 第二次内置 imagegen 成功生成遥“告别前普通笑”立绘差分并接入好结局，v31 内置 imagegen 成功生成葵“低信任修复后的安心”并接入修复回收，v32 重试葵告别前普通笑时遇到 TooManyRequests，v33 重试冬子告别前普通笑时仍遇到 TooManyRequests，均未新增图片。v34 内置 imagegen 成功生成葵“告别前普通笑”并接入 ending_aoi_good；v35 重试冬子告别前普通笑未获得新图，未使用 CLI/API fallback；v36 内置 imagegen 成功生成冬子“告别前普通笑”并接入 ending_fuyuko_good；v37 内置 imagegen 成功生成遥“普通结局里的克制笑”并接入 prelude_haruka_normal_aftertaste；v38 内置 imagegen 成功生成葵“普通结局里的克制笑”并接入 prelude_aoi_normal_aftertaste；v39 内置 imagegen 成功生成冬子“普通结局里的克制笑”并接入 prelude_fuyuko_normal_aftertaste；v40 内置 imagegen 成功生成冬子“认真道歉后的放松”并接入 prelude_fuyuko_repair 与 prelude_fuyuko_wrong_gift_repair；v41 内置 imagegen 成功生成葵“错误礼物修复后的放松”并接入 prelude_aoi_wrong_gift_repair；v42 内置 imagegen 成功生成遥“错误礼物修复后的放松”并接入 prelude_haruka_wrong_gift_repair；v47 内置 imagegen 成功生成葵“承诺变轻后的放松”并接入 prelude_aoi_repair；v48 内置 imagegen 成功生成冬子“后门白灯下的克制放松”并接入 fuyuko_006 与 branch_fuyuko_backdoor_sit；v49 修正 AP=0 日程页只显示推进按钮；v50 内置 imagegen 成功生成普通结局公共走廊余韵 CG 并接入 prelude_normal_afterglow_trio 与 Archive 普通结局提示；v51 未新增图片，补齐葵/冬子后期轮换日常，并让 Archive 未完成条件显示类型与还差项；v52 内置 imagegen 成功生成冬子“错误礼物修复后的克制释然”并接入 prelude_fuyuko_wrong_gift_repair；v53 内置 imagegen 成功生成遥“通知单旁被沉默接住后的释然”并接入 branch_haruka_notice_silence；v54 内置 imagegen 成功生成葵“开窗后被允许不命名痛苦的安心”并接入 branch_aoi_thermometer_window；v55 未新增图片，补齐晚自习和便利店打工的轮换日常；v56 未新增图片，自查修复 Continue/Load 的 Archive 修复持久化与 hub 提示；v57 未新增图片，补三条普通结局公共余韵回看札记并修正文档资源统计；v58 未新增图片，补三位女主送错礼物即时分流与 Archive 即时札记；v59 内置 imagegen 成功生成遥“正确礼物后的页边安心”并接入 gift_haruka 与 Archive 正确礼物札记；v60 内置 imagegen 成功生成葵“正确礼物后的纸鹤安心”并接入 gift_aoi 与 Archive 正确礼物札记；v61 内置 imagegen 成功生成冬子“正确礼物后的咖啡释然”并接入 gift_fuyuko 与 Archive 正确礼物札记；v62-v63 未新增图片，补齐三条进阶礼物任务回看札记。下一轮优先继续补进阶礼物任务后的细微表情差分、三位女主更多轻微释然状态，或补无需新图的 Archive 完成后读法；如果图像接口再次受限，则继续补普通结局角色余韵文本、Archive 细节或其他无需新图的内容。",
           "6. 保持核心主题：好感不是占有，信任来自克制；甜味要小而真，服装差分要服务场景和情绪。高中线可以有轻微心动和场景福利感，但必须得体、完整穿着、自然姿态，不做性化镜头。"
         ].join("\n\n"),
       next: "daily_hub"

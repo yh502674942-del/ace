@@ -86,6 +86,9 @@
 - v58 起，送错礼物不再只进入通用 `gift_wrong`，而会按目标女主进入 `gift_wrong_haruka`、`gift_wrong_aoi`、`gift_wrong_fuyuko`；Archive 新增三条错误礼物即时回看札记，记录当场误解和礼貌背后的距离。该改动不改变错误礼物 AP 消耗、库存扣除、好感、信任、负罪、wrongGift flags、结局优先级或阈值。
 - v59 起，遥线基础正确礼物“旧文学杂志”接入“正确礼物后的页边安心”表情差分，并新增一条正确礼物回看札记。该改动只让“送对礼物为什么对”有可见读法，不改变礼物成本、效果、AP、库存、结局优先级或阈值。
 - v60 起，葵线基础正确礼物“纸鹤信笺”接入“正确礼物后的纸鹤安心”表情差分，并新增一条正确礼物回看札记。该改动只让“送对礼物为什么对”有可见读法，不改变礼物成本、效果、AP、库存、结局优先级或阈值。
+- v61 起，冬子线基础正确礼物“罐装咖啡”接入“正确礼物后的咖啡释然”表情差分，并新增一条正确礼物回看札记。该改动补齐三位女主基础正确礼物的可见读法，不改变礼物成本、效果、AP、库存、结局优先级或阈值。
+- v62 起，遥线进阶礼物“留白便签”新增一条进阶礼物回看札记，复用已有礼物小任务 CG。该改动只让进阶礼物任务的主题可回看，不改变购买门槛、礼物效果、AP、库存、结局优先级或阈值。
+- v63 起，葵线进阶礼物“窗边创可贴盒”和冬子线进阶礼物“透明文件袋”各新增一条进阶礼物回看札记，复用已有礼物小任务 CG。该改动补齐三位女主进阶礼物任务后的主题读法，不改变购买门槛、礼物效果、AP、库存、结局优先级或阈值。
 
 ## 结局规则
 
@@ -142,6 +145,9 @@
 - v58 错误礼物即时反应只新增 3 个无数值剧情节点、3 个 `gameplay.scenes` 条目和 3 条 `gameplay.reviewNotes`；`performGift()` 分流不改变错误礼物原有效果、AP 消耗、库存扣除、结局优先级或阈值。
 - v59 遥正确礼物细读法只新增 `portrait-haruka-correctgift-margin-relief.png`、一个 `backgrounds` / `portraits` / `portraitStates` 条目、一个 `gameplay.scenes.gift_haruka` 条目和一条 `gameplay.reviewNotes`；`gift_haruka` 原有礼物效果、AP 消耗、库存扣除和结局阈值不变。
 - v60 葵正确礼物细读法只新增 `portrait-aoi-correctgift-crane-relief.png`、一个 `backgrounds` / `portraits` / `portraitStates` 条目、一个 `gameplay.scenes.gift_aoi` 条目和一条 `gameplay.reviewNotes`；`gift_aoi` 原有礼物效果、AP 消耗、库存扣除和结局阈值不变。
+- v61 冬子正确礼物细读法只新增 `portrait-fuyuko-correctgift-coffee-relief.png`、一个 `backgrounds` / `portraits` / `portraitStates` 条目、一个 `gameplay.scenes.gift_fuyuko` 条目和一条 `gameplay.reviewNotes`；`gift_fuyuko` 原有礼物效果、AP 消耗、库存扣除和结局阈值不变。
+- v62 遥进阶礼物细读法只新增一条 `gameplay.reviewNotes.harukaAdvancedGiftMargin`，复用 `taskHarukaInkMargin` 与 `task_haruka_margin_note`；`marginSticky` 原有购买门槛、礼物效果、AP 消耗、库存扣除、任务 flag 和结局阈值不变。
+- v63 葵/冬子进阶礼物细读法只新增 `gameplay.reviewNotes.aoiAdvancedGiftBandage` 与 `gameplay.reviewNotes.fuyukoAdvancedGiftFileBag`，分别复用 `taskAoiCraneMilktea` / `taskFuyukoDutyCoffee` 与对应任务节点；`windowBandage`、`clearFileBag` 原有购买门槛、礼物效果、AP 消耗、库存扣除、任务 flag 和结局阈值不变。
 - 关键节奏：第 1-3 天可完成主要礼物/路线事件积累；第 6、7、13 天可依次完成三组周末约会；第 14 天以后保留大量 AP 给学习、打工和降负罪，不会被最终阈值卡死。
 - 雾岛遥线需要为进阶礼物额外打工一次；白石葵线和椎名冬子线初始金钱即可覆盖三件路线礼物。所有路线在规范游玩下负罪可控制在 7 以下。
 - 送礼和约会不计入核心事件数，因此玩家若想拿好结局，必须至少主动进入对应女主路线 5 次；这是有意设计，用来避免只靠金钱和礼物跳过“看见对方”的过程。
